@@ -108,7 +108,8 @@
         .btn {
             display: flex;
             align-items: center;
-            padding: 15px 20px 15px 60px; /* Increased left padding */
+            padding: 15px 20px 15px 60px;
+            position: relative;
             background-color: var(--white);
             color: var(--primary-blue);
             text-decoration: none;
@@ -118,7 +119,6 @@
             cursor: pointer;
             font-size: 18px;
             font-weight: 500;
-            position: relative;
         }
         .btn:hover {
             background-color: var(--light-gray);
@@ -129,15 +129,19 @@
         .btn-icon {
             position: absolute;
             left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 24px;
             height: 24px;
-            font-size: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        .btn i {
+            font-size: 24px;
+        }
         .btn-icon {
-            object-fit: contain; /* Ensures the image fits within the dimensions */
+            object-fit: contain;
         }
         .btn span {
             flex: 1;
@@ -257,6 +261,26 @@
                 font-size: 1em;
             }
         }
+
+        /* Specific adjustment for FareHarbor logo */
+        .btn-icon[alt="FareHarbor"] {
+            left: 18px; /* Adjust this value as needed */
+        }
+
+        .fareharbor-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold; /* Added this line to make the text bold */
+            margin-top: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .fareharbor-link:hover {
+            color: var(--secondary-teal);
+        }
     </style>
 </head>
 <body>
@@ -265,6 +289,7 @@
             <img src="https://ca.slack-edge.com/EF4SR67GA-U01SK1YP2MB-d38feea48d66-512" alt="Reinaldo Saúde" class="profile-image">
             <h1>Reinaldo Saúde</h1>
             <h2>Strategic Partnerships Manager at FareHarbor</h2>
+            <a href="https://fareharbor.com" class="fareharbor-link" target="_blank">FareHarbor.com</a>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/reinaldosaude/" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
@@ -279,10 +304,6 @@
         </div>
         
         <div class="action-buttons">
-            <a href="https://compass.fareharbor.com/partners/fareharbor-distribution-network/" class="btn" target="_blank">
-                <img src="https://ugc.production.linktr.ee/xP9g1LmnQ5GvSgRmZumT_download%20(2).png?io=true&size=thumbnail-stack" alt="Distribution Network" class="btn-icon">
-                <span>Distribution Network</span>
-            </a>
             <a href="https://api.whatsapp.com/send?phone=31634879007" class="btn" target="_blank">
                 <i class="fab fa-whatsapp"></i>
                 <span>Send me a message</span>

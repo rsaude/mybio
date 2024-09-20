@@ -20,53 +20,52 @@
             line-height: 1.6;
             color: var(--white);
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: var(--primary-blue);
             background-image: url('icons.png');
             background-repeat: repeat;
-            background-size: 400px; /* Increased size from 200px to 400px */
-            background-attachment: fixed; /* This helps with the blur effect */
-            position: relative;
+            background-size: 400px;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            font-size: 18px; /* Increase base font size */
+            justify-content: center;
+            font-size: 16px;
         }
         body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background-color: var(--primary-blue);
-            opacity: 0.8; /* Adjust this value to change the opacity */
+            opacity: 0.6;
             z-index: -1;
         }
         .container {
-            background-color: var(--primary-blue);
             border-radius: 10px;
-            padding: 30px; /* Increase padding */
-            max-width: 500px; /* Increase max-width */
-            width: 90%;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 25px; /* Increase gap between sections */
-            backdrop-filter: blur(5px); /* Adjust the pixel value to increase or decrease blur */
-            -webkit-backdrop-filter: blur(5px); /* For Safari support */
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .profile {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 30px;
             text-align: center;
         }
         .profile-image {
-            width: 30vw; /* Responsive width */
-            max-width: 150px; /* Maximum width */
-            height: auto; /* Maintain aspect ratio */
+            width: 30vw;
+            max-width: 150px;
+            height: auto;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
@@ -76,13 +75,13 @@
             margin: 0;
             font-weight: 700;
             color: var(--white);
-            font-size: 2.2em; /* Increase h1 font size */
+            font-size: 2.2em;
         }
         h2 {
             margin: 10px 0;
             font-weight: 400;
             color: var(--light-gray);
-            font-size: 1.2em; /* Increase h2 font size */
+            font-size: 1.2em;
         }
         .social-links {
             display: flex;
@@ -92,7 +91,7 @@
         }
         .social-links a {
             color: var(--white);
-            font-size: 30px; /* Increase social icons size */
+            font-size: 30px;
             transition: color 0.3s ease, transform 0.3s ease;
         }
         .social-links a:hover {
@@ -107,7 +106,7 @@
         .btn {
             display: flex;
             align-items: center;
-            padding: 20px 25px; /* Increase button padding */
+            padding: 15px 20px;
             background-color: var(--white);
             color: var(--primary-blue);
             text-decoration: none;
@@ -115,7 +114,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 18px; /* Increase button font size */
+            font-size: 18px;
             font-weight: 500;
             position: relative;
         }
@@ -129,18 +128,11 @@
             left: 20px;
             width: 20px;
             text-align: center;
-            font-size: 24px; /* Increase button icon size */
+            font-size: 24px;
         }
         .btn span {
             flex: 1;
             text-align: center;
-        }
-        .btn::after {
-            content: '⋮';
-            position: absolute;
-            right: 20px;
-            color: var(--primary-blue);
-            opacity: 0.5;
         }
         #contactInfo {
             display: none;
@@ -150,7 +142,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 10px;
-            font-size: 18px; /* Increase contact info font size */
+            font-size: 18px;
         }
         #contactInfo p {
             margin: 5px 0;
@@ -167,7 +159,7 @@
             border-radius: 5px;
             font-weight: 500;
             transition: background-color 0.3s ease;
-            font-size: 18px; /* Increase download button font size */
+            font-size: 18px;
         }
         #contactInfo .download-btn:hover {
             background-color: var(--secondary-teal);
@@ -236,19 +228,24 @@
         /* Media query for smaller screens */
         @media (max-width: 600px) {
             body {
-                font-size: 14px; /* Smaller base font size for mobile */
+                padding: 10px;
             }
-
             .container {
-                padding: 20px; /* Fixed padding for very small screens */
+                padding: 15px;
             }
-
             .profile-image {
-                width: 40vw; /* Larger relative size for small screens */
+                width: 30vw;
+                max-width: 120px;
             }
-
             .btn {
-                padding: 12px 15px; /* Even smaller padding for mobile */
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1em;
             }
         }
     </style>
